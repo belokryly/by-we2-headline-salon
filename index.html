@@ -9,7 +9,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Pinyon+Script&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Inter+Tight:wght@300;400;500;600;700&family=Pinyon+Script&family=Caveat:wght@500&display=swap" rel="stylesheet">
 
 <style>
   /* =================== TOKENS =================== */
@@ -32,8 +32,8 @@
     --shadow:    0 18px 50px -16px rgba(14,57,64,.20);
     --shadow-lg: 0 30px 80px -20px rgba(14,57,64,.30);
 
-    --serif:'Cormorant Garamond', serif;
-    --sans:'Inter', -apple-system, sans-serif;
+    --serif:'Fraunces', 'Cormorant Garamond', serif;
+    --sans:'Inter Tight', -apple-system, sans-serif;
     --script:'Pinyon Script', cursive;
     --hand:'Caveat', cursive;
   }
@@ -69,6 +69,11 @@
     -webkit-font-smoothing:antialiased;
     -webkit-text-size-adjust: 100%;
     transition: background .5s ease, color .5s ease;
+    font-feature-settings: "ss01", "cv11";
+  }
+  /* Fraunces variable axes — refine display headings */
+  h1, h2, h3, .hero-h, .svc-name, .svc-head h2, .ba-head h2, .reviews-head h2, .gallery h2, .faq-side h2, .book-info h2{
+    font-variation-settings: "opsz" 144, "SOFT" 30;
   }
   body::before{
     content:""; position:fixed; inset:0; pointer-events:none; z-index:200;
@@ -194,13 +199,25 @@
     width:38px; height:38px; border-radius:50%;
     border:1px solid var(--line);
     align-items:center; justify-content:center;
-    flex-direction:column; gap:5px;
     flex-shrink:0; background:transparent;
+    position: relative;
   }
-  .hamb span{ width:14px; height:1.5px; background:var(--ink); border-radius:2px; transition: transform .3s, opacity .3s }
-  body.menu-open .hamb span:nth-child(1){ transform: translateY(3.25px) rotate(45deg) }
+  .hamb span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width:16px; height:1.5px;
+    background:var(--ink);
+    border-radius:2px;
+    transition: transform .35s cubic-bezier(.6,0,.2,1), opacity .25s;
+    transform-origin: center center;
+  }
+  .hamb span:nth-child(1){ transform: translate(-50%, -6px) }
+  .hamb span:nth-child(2){ transform: translate(-50%, -50%) }
+  .hamb span:nth-child(3){ transform: translate(-50%, 5px) }
+  body.menu-open .hamb span:nth-child(1){ transform: translate(-50%, -50%) rotate(45deg) }
   body.menu-open .hamb span:nth-child(2){ opacity:0 }
-  body.menu-open .hamb span:nth-child(3){ transform: translateY(-3.25px) rotate(-45deg) }
+  body.menu-open .hamb span:nth-child(3){ transform: translate(-50%, -50%) rotate(-45deg) }
 
   @media(max-width:1000px){
     .nav-mid{ display:none }
@@ -213,6 +230,7 @@
     .nav-right{ gap:8px }
     .icon-btn{ width:36px; height:36px }
     .hamb{ width:36px; height:36px }
+    .nav-call{ display: none }
   }
 
   /* mobile menu */
@@ -237,6 +255,18 @@
   }
   .m-menu a:hover, .m-menu a:active{ color:var(--aqua); padding-left:8px }
   .m-menu a em{ font-style:italic; color:var(--aqua) }
+  .m-menu a .m-arr{
+    width: 24px;
+    height: 24px;
+    color: var(--aqua);
+    flex-shrink: 0;
+    transition: transform .35s cubic-bezier(.6,0,.2,1), color .25s;
+    opacity: .7;
+  }
+  .m-menu a:hover .m-arr, .m-menu a:active .m-arr{
+    transform: translate(3px, -3px);
+    opacity: 1;
+  }
   .m-menu a span.num{ font-size:11px; font-family:var(--sans); color:var(--muted); letter-spacing:.18em }
   .m-menu-foot{
     margin-top:auto;
@@ -527,7 +557,12 @@
     overflow:hidden;
     border-block: 1px solid rgba(255,255,255,.06);
   }
-  html[data-theme="dark"] .trust{ background: #04141A; color: #E8F4F5 }
+  /* In dark mode — invert trust to a bright accent strip so it pops */
+  html[data-theme="dark"] .trust{
+    background: #FAF6EE;
+    color: #0E3940;
+    border-block: 1px solid rgba(14,57,64,.10);
+  }
   .trust-row{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
@@ -538,30 +573,34 @@
     display:flex; align-items:center; gap:14px;
     border-left: 1px solid rgba(255,255,255,.06);
   }
+  html[data-theme="dark"] .trust-cell{ border-left: 1px solid rgba(14,57,64,.08) }
   .trust-cell:first-child{ border-left:none }
   .trust-ico{
     width: 38px; height: 38px; border-radius: 50%;
-    background: var(--aqua-soft);
-    color: var(--aqua);
+    background: rgba(45,203,217,.14);
+    color: #1FB3C0;
     display:flex; align-items:center; justify-content:center;
     flex-shrink:0;
   }
+  html[data-theme="dark"] .trust-ico{ background: rgba(31,179,192,.18); color: #0E7E88 }
   .trust-ico svg{ width:18px; height:18px }
   .trust-text{ display:flex; flex-direction:column; gap:2px; min-width:0 }
   .trust-text b{
     font-size:13px; font-weight:600; color:#FAF6EE;
     letter-spacing:.01em;
   }
-  html[data-theme="dark"] .trust-text b{ color: #E8F4F5 }
+  html[data-theme="dark"] .trust-text b{ color: #0E3940 }
   .trust-text span{
     font-size:11px; color:rgba(250,246,238,.55);
     letter-spacing:.04em;
   }
-  html[data-theme="dark"] .trust-text span{ color: rgba(232,244,245,.55) }
+  html[data-theme="dark"] .trust-text span{ color: rgba(14,57,64,.6) }
   @media(max-width:900px){
     .trust-row{ grid-template-columns: repeat(2, 1fr) }
     .trust-cell:nth-child(3){ border-left:none; border-top: 1px solid rgba(255,255,255,.06) }
     .trust-cell:nth-child(4){ border-top: 1px solid rgba(255,255,255,.06) }
+    html[data-theme="dark"] .trust-cell:nth-child(3),
+    html[data-theme="dark"] .trust-cell:nth-child(4){ border-top: 1px solid rgba(14,57,64,.08) }
   }
   @media(max-width:520px){
     .trust-cell{ padding: 18px 16px; gap:10px }
@@ -620,27 +659,22 @@
   @media(max-width:520px){ .stats{ padding: 48px 0 } }
   .stats-grid{
     display:grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
   }
-  @media(max-width:900px){ .stats-grid{ grid-template-columns: repeat(2, 1fr) } }
   .stat-card{
     position:relative;
-    padding: 36px 28px;
+    padding: 48px 36px;
     border-right: 1px solid var(--line);
     background: transparent;
     transition: background .35s;
   }
   .stat-card:last-child{ border-right: none }
   .stat-card:hover{ background: var(--card) }
-  @media(max-width:900px){
-    .stat-card:nth-child(2){ border-right: none }
-    .stat-card:nth-child(1), .stat-card:nth-child(2){ border-bottom: 1px solid var(--line) }
-  }
   @media(max-width:520px){
-    .stat-card{ padding: 28px 20px }
+    .stat-card{ padding: 32px 22px }
   }
 
   .stat-ico{
@@ -787,8 +821,12 @@
     border-color: rgba(45,203,217,.4);
   }
   .svc-item.open .svc-price{
-    background: var(--ink);
-    border-color: var(--ink);
+    background: #0E3940;
+    border-color: #0E3940;
+  }
+  html[data-theme="dark"] .svc-item.open .svc-price{
+    background: #0A2A30;
+    border-color: rgba(45,203,217,.5);
   }
   .svc-price .from{
     font-size: 9px; letter-spacing:.2em; text-transform:uppercase;
@@ -799,6 +837,7 @@
     font-weight: 500;
   }
   .svc-item.open .svc-price .from{ color: rgba(250,246,238,.55) }
+  html[data-theme="dark"] .svc-item.open .svc-price .from{ color: rgba(232,244,245,.6) }
   .svc-price .amt{
     font-family: var(--serif);
     font-size: clamp(20px, 2.4vw, 26px);
@@ -809,7 +848,8 @@
     letter-spacing: -.01em;
   }
   html[data-theme="dark"] .svc-price .amt{ color: var(--aqua) }
-  .svc-item.open .svc-price .amt{ color: var(--aqua) }
+  .svc-item.open .svc-price .amt{ color: #3FDDEB }
+  html[data-theme="dark"] .svc-item.open .svc-price .amt{ color: #3FDDEB }
   .svc-price .amt em{ font-style:italic; color: var(--aqua); margin-left: 1px; font-weight: 400 }
   .svc-toggle{
     width: 42px; height: 42px; border-radius: 50%;
@@ -847,7 +887,7 @@
     .svc-body-inner{ grid-template-columns: 1fr; gap: 20px; padding: 6px 0 26px }
   }
   .svc-img{
-    aspect-ratio: 4/5;
+    aspect-ratio: 16/9;
     overflow: hidden;
     border-radius: 8px;
     background: var(--paper);
@@ -2455,6 +2495,77 @@
   body{ padding-bottom: 84px }
   @media(max-width: 600px){ body{ padding-bottom: 72px } }
 
+  /* ========== FLOATING CALL BUTTON (always visible) ========== */
+  .call-fab{
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 96;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px 14px 16px;
+    background: var(--aqua);
+    color: var(--ink);
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-decoration: none;
+    box-shadow: 0 14px 36px -8px rgba(45,203,217,.55), 0 0 0 1px rgba(255,255,255,.06);
+    transition: transform .25s cubic-bezier(.4,1.6,.5,1), box-shadow .3s, background .3s;
+    opacity: 0;
+    animation: fabIn .5s cubic-bezier(.4,1.6,.5,1) 1.4s forwards;
+  }
+  @keyframes fabIn{ to{ opacity: 1 } }
+  .call-fab:hover{
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 22px 48px -8px rgba(45,203,217,.7), 0 0 0 1px rgba(255,255,255,.1);
+    background: #3FDDEB;
+  }
+  .call-fab .ico{
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--ink);
+    color: var(--aqua);
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: transform .35s;
+  }
+  .call-fab:hover .ico{ transform: rotate(-12deg) }
+  .call-fab .ico svg{ width: 14px; height: 14px }
+  /* gentle pulse to attract attention without being annoying */
+  .call-fab::before{
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 999px;
+    box-shadow: 0 0 0 0 rgba(45,203,217,.5);
+    animation: fabPulse 2.6s ease-out infinite;
+    pointer-events: none;
+  }
+  @keyframes fabPulse{
+    0%{ box-shadow: 0 0 0 0 rgba(45,203,217,.5) }
+    70%{ box-shadow: 0 0 0 14px rgba(45,203,217,0) }
+    100%{ box-shadow: 0 0 0 0 rgba(45,203,217,0) }
+  }
+  /* On mobile — collapse to a circle */
+  @media(max-width: 600px){
+    .call-fab{
+      right: 14px; bottom: 76px;
+      padding: 0;
+      width: 56px; height: 56px;
+      justify-content: center;
+      gap: 0;
+    }
+    .call-fab .label{ display: none }
+    .call-fab .ico{ width: 30px; height: 30px }
+    .call-fab .ico svg{ width: 16px; height: 16px }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .call-fab::before{ animation: none }
+  }
+
   /* reveal */
   .reveal{ opacity:0; transform:translateY(40px); transition: opacity 1s ease, transform 1s cubic-bezier(.6,0,.2,1) }
   .reveal.in{ opacity:1; transform:none }
@@ -2486,6 +2597,9 @@
   </nav>
   <div class="nav-right">
     <span class="nav-time" id="navTime">Open in Woodland Hills</span>
+    <a class="icon-btn nav-call" href="tel:+18182222014" aria-label="Call (818) 222-2014" title="Call (818) 222-2014">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
     <button class="icon-btn theme-tog" id="themeTog" aria-label="Toggle theme" title="Toggle theme">
       <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4l1.4-1.4M17 7l1.4-1.4"/></svg>
       <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -2498,11 +2612,11 @@
 </header>
 
 <div class="m-menu" id="mMenu" aria-hidden="true">
-  <a href="#services"><span>01 — Services</span><em>↗</em></a>
-  <a href="#about"><span>02 — Studio</span><em>↗</em></a>
-  <a href="#gallery"><span>03 — Work</span><em>↗</em></a>
-  <a href="#reviews"><span>04 — Reviews</span><em>↗</em></a>
-  <a href="#visit"><span>05 — Visit</span><em>↗</em></a>
+  <a href="#services"><span>01 — Services</span><svg class="m-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+  <a href="#about"><span>02 — Studio</span><svg class="m-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+  <a href="#gallery"><span>03 — Work</span><svg class="m-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+  <a href="#reviews"><span>04 — Reviews</span><svg class="m-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+  <a href="#visit"><span>05 — Visit</span><svg class="m-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
   <div class="m-menu-foot">
     <a href="tel:+18182222014">(818) 222-2014</a>
     <span>Tue–Sat · Woodland Hills</span>
@@ -2528,33 +2642,24 @@
           <a class="magnetic" href="#visit">Book a chair <span class="arrow">↗</span></a>
           <a class="magnetic magnetic-ghost" href="#services">Services <span class="arrow">↗</span></a>
         </div>
-        <div class="hero-badges">
-          <div class="hero-rating">
-            <span class="stars">★★★★★</span>
-            <span class="text"><b>4.8</b><span>· 28 Google reviews</span></span>
-          </div>
-          <div class="hero-divider"></div>
-          <div class="hero-est"><b>10 yrs</b> · in Woodland Hills</div>
-        </div>
       </div>
 
       <div class="polaroid-stage" id="polaroidStage" aria-label="Hair work — swipe">
         <!-- 4 polaroid cards stacked, top is interactive -->
         <article class="polaroid" data-i="0">
-          <span class="tag">Booking · December</span>
-          <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=900&q=85&auto=format&fit=crop" alt="Glassy blowout">
+          <img src="images/hero/polaroid-1.jpg" alt="Glassy blowout">
           <span class="cap">Glassy blowout · Nov '25</span>
         </article>
         <article class="polaroid" data-i="1">
-          <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=900&q=85&auto=format&fit=crop" alt="Balayage color">
+          <img src="images/hero/polaroid-2.jpg" alt="Balayage color">
           <span class="cap">Soft balayage · Tess</span>
         </article>
         <article class="polaroid" data-i="2">
-          <img src="https://images.unsplash.com/photo-1595475884562-073c30d45670?w=900&q=85&auto=format&fit=crop" alt="Hair extensions">
+          <img src="images/hero/polaroid-3.jpg" alt="Hair extensions">
           <span class="cap">Tape-in extensions</span>
         </article>
         <article class="polaroid" data-i="3">
-          <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=900&q=85&auto=format&fit=crop" alt="Bridal up-do">
+          <img src="images/hero/polaroid-4.jpg" alt="Bridal up-do">
           <span class="cap">Bridal up-do · Mia</span>
         </article>
 
@@ -2569,7 +2674,7 @@
           <span class="ico">✓</span>
           <div>
             <div class="lab">Booked</div>
-            <div class="val">1 500+ heads</div>
+            <div class="val">1 500+ clients</div>
           </div>
         </div>
 
@@ -2641,35 +2746,18 @@
     <div class="stats-grid">
       <div class="stat-card" id="stat1">
         <div class="stat-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        </div>
-        <div class="stat-num" data-count="10"><span data-num>10</span><small>years</small></div>
-        <div class="stat-lbl">Crafting beautiful hair in Woodland Hills</div>
-      </div>
-
-      <div class="stat-card" id="stat2">
-        <div class="stat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div class="stat-num" data-count="1500"><span data-num>1 500</span><small>+ clients</small></div>
-        <div class="stat-lbl">Heads of hair styled to date</div>
+        <div class="stat-lbl">Happy clients styled to date</div>
       </div>
 
-      <div class="stat-card" id="stat3">
+      <div class="stat-card" id="stat2">
         <div class="stat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9c2 0 4 1 5 2"/><polyline points="21 4 12 13 9 10"/></svg>
         </div>
         <div class="stat-num" data-count="95"><span data-num>95</span><small>%</small></div>
         <div class="stat-lbl">Of clients return within 8 weeks</div>
-      </div>
-
-      <div class="stat-card" id="stat4">
-        <div class="stat-ico">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.7 1.7-7-5.5-4.7 7.1-.6L12 2l2.9 6.7 7.1.6-5.5 4.7 1.7 7z"/></svg>
-        </div>
-        <div class="stat-num">4.8<span class="gold-star">★</span></div>
-        <div class="stat-lbl">Average rating · 28 Google reviews</div>
-        <div class="stat-stars">★★★★★</div>
       </div>
     </div>
   </div>
@@ -2698,7 +2786,7 @@
         <div class="svc-body">
           <div class="svc-body-inner">
             <div class="svc-img">
-              <img src="https://images.unsplash.com/photo-1595475884562-073c30d45670?w=900&q=85&auto=format&fit=crop" alt="">
+              <img src="images/services/01-hair-extensions.jpg" alt="">
             </div>
             <div class="svc-detail">
               <h4>Tape-in, weft and hand-tied — done right.</h4>
@@ -2735,7 +2823,7 @@
         <div class="svc-body">
           <div class="svc-body-inner">
             <div class="svc-img">
-              <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=900&q=85&auto=format&fit=crop" alt="">
+              <img src="images/services/02-color-correction.jpg" alt="">
             </div>
             <div class="svc-detail">
               <h4>Balayage, single-process, color correction.</h4>
@@ -2773,7 +2861,7 @@
         <div class="svc-body">
           <div class="svc-body-inner">
             <div class="svc-img">
-              <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=900&q=85&auto=format&fit=crop" alt="">
+              <img src="images/services/03-brazilian-blowout.jpg" alt="">
             </div>
             <div class="svc-detail">
               <h4>That glassy, frizz-free finish — the real one.</h4>
@@ -2810,7 +2898,7 @@
         <div class="svc-body">
           <div class="svc-body-inner">
             <div class="svc-img">
-              <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=900&q=85&auto=format&fit=crop" alt="">
+              <img src="images/services/04-bridal-updo.jpg" alt="">
             </div>
             <div class="svc-detail">
               <h4>For the day everything has to be perfect.</h4>
@@ -2847,7 +2935,7 @@
         <div class="svc-body">
           <div class="svc-body-inner">
             <div class="svc-img">
-              <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=900&q=85&auto=format&fit=crop" alt="">
+              <img src="images/services/05-cut-style.jpg" alt="">
             </div>
             <div class="svc-detail">
               <h4>The cut that grows out beautifully.</h4>
@@ -2884,7 +2972,7 @@
         <div class="svc-body">
           <div class="svc-body-inner">
             <div class="svc-img">
-              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=85&auto=format&fit=crop" alt="">
+              <img src="images/services/06-olaplex.jpg" alt="">
             </div>
             <div class="svc-detail">
               <h4>Reset and rebuild damaged hair.</h4>
@@ -2920,7 +3008,7 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="about-img reveal">
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=85&auto=format&fit=crop" alt="The studio interior">
+        <img src="images/about/studio.jpg" alt="The studio interior">
         <div class="about-img-tag"><b>The Studio</b>Woodland Hills · 2016</div>
       </div>
       <div class="about-copy reveal">
@@ -2954,23 +3042,23 @@
 
     <div class="g-grid">
       <a class="g-item g-1 reveal" href="#visit">
-        <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=900&q=85&auto=format&fit=crop" alt="" data-parallax>
+        <img src="images/gallery/1.jpg" alt="" data-parallax>
         <span class="g-item-cap">Color · Balayage</span>
       </a>
       <a class="g-item g-2 reveal" href="#visit">
-        <img src="https://images.unsplash.com/photo-1595475884562-073c30d45670?w=900&q=85&auto=format&fit=crop" alt="" data-parallax>
+        <img src="images/gallery/2.jpg" alt="" data-parallax>
         <span class="g-item-cap">Extensions</span>
       </a>
       <a class="g-item g-3 reveal" href="#visit">
-        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=700&q=85&auto=format&fit=crop" alt="" data-parallax>
+        <img src="images/gallery/3.jpg" alt="" data-parallax>
         <span class="g-item-cap">Cut · Layers</span>
       </a>
       <a class="g-item g-4 reveal" href="#visit">
-        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=700&q=85&auto=format&fit=crop" alt="" data-parallax>
+        <img src="images/gallery/4.jpg" alt="" data-parallax>
         <span class="g-item-cap">Bridal · Up-do</span>
       </a>
       <a class="g-item g-5 reveal" href="#visit">
-        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=700&q=85&auto=format&fit=crop" alt="" data-parallax>
+        <img src="images/gallery/5.jpg" alt="" data-parallax>
         <span class="g-item-cap">Blowout · Glassy</span>
       </a>
     </div>
@@ -3436,6 +3524,14 @@
   </div>
 </footer>
 
+<!-- Floating call button — always visible, the "tap to call" path -->
+<a class="call-fab" href="tel:+18182222014" aria-label="Call The Headline Salon">
+  <span class="ico">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </span>
+  <span class="label">Call (818) 222-2014</span>
+</a>
+
 <!-- Cross-page nav for the concept preview (Guide / Pricing) -->
 <nav class="cross-nav" aria-label="Concept navigation">
   <a href="guide.html" aria-label="View the concept walkthrough">
@@ -3456,8 +3552,7 @@
   const root = document.documentElement;
   const themeBtn = document.getElementById('themeTog');
   const stored = localStorage.getItem('theme-headline');
-  const prefDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  root.setAttribute('data-theme', stored || (prefDark ? 'dark' : 'light'));
+  root.setAttribute('data-theme', stored || 'light');
   function setTheme(t){
     root.setAttribute('data-theme', t);
     localStorage.setItem('theme-headline', t);
@@ -3719,10 +3814,10 @@
   const baNext = document.getElementById('baNext');
   const baCounter = document.getElementById('baCounter');
   const baSet = [
-    { before: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1400&q=85&auto=format&fit=crop', after: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=1400&q=85&auto=format&fit=crop', label: 'Color · Balayage' },
-    { before: 'https://images.unsplash.com/photo-1587316341436-acb04bdf28e5?w=1400&q=85&auto=format&fit=crop', after: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1400&q=85&auto=format&fit=crop', label: 'Blowout · Glassy' },
-    { before: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1400&q=85&auto=format&fit=crop', after: 'https://images.unsplash.com/photo-1595475884562-073c30d45670?w=1400&q=85&auto=format&fit=crop', label: 'Extensions' },
-    { before: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1400&q=85&auto=format&fit=crop', after: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=1400&q=85&auto=format&fit=crop', label: 'Bridal · Up-do' }
+    { before: 'images/before-after/1-color-before.jpg', after: 'images/before-after/1-color-after.jpg', label: 'Color · Balayage' },
+    { before: 'images/before-after/2-blowout-before.jpg', after: 'images/before-after/2-blowout-after.jpg', label: 'Blowout · Glassy' },
+    { before: 'images/before-after/3-extensions-before.jpg', after: 'images/before-after/3-extensions-after.jpg', label: 'Extensions' },
+    { before: 'images/before-after/4-bridal-before.jpg', after: 'images/before-after/4-bridal-after.jpg', label: 'Bridal · Up-do' }
   ];
   let baIdx = 0;
   let stageWidth = 1;
