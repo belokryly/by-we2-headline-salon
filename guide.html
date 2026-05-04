@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Headline Salon — Concept Walkthrough · We2</title>
+<title>La Vie Beauty — Concept Walkthrough · We2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -462,40 +462,6 @@
     object-position: top center;
     display: block;
   }
-  /* Placeholder when screenshot is missing (alt-text fallback) */
-  .macbook-bezel, .iphone-screen{
-    background:
-      linear-gradient(135deg, rgba(255,255,255,0.04), transparent 60%),
-      repeating-linear-gradient(45deg, transparent 0 18px, rgba(255,255,255,0.025) 18px 19px),
-      #14161B;
-  }
-  [data-theme="light"] .macbook-bezel, [data-theme="light"] .iphone-screen{
-    background:
-      linear-gradient(135deg, rgba(0,0,0,0.04), transparent 60%),
-      repeating-linear-gradient(45deg, transparent 0 18px, rgba(0,0,0,0.025) 18px 19px),
-      #EEEFF2;
-  }
-  .macbook-bezel::after, .iphone-screen::after{
-    content: 'Screenshot pending';
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.18);
-    z-index: 0;
-    pointer-events: none;
-  }
-  [data-theme="light"] .macbook-bezel::after, [data-theme="light"] .iphone-screen::after{
-    color: rgba(0,0,0,0.22);
-  }
-  .macbook-bezel img, .iphone-screen img{ position: relative; z-index: 1 }
-  /* Hide placeholder once a real image loads */
-  .macbook-bezel img[src]:not([src=""]):not([src*="findings/"]):not([src*="screenshots/"]) ~ ::after { display:none }
   .macbook-base {
     height: 9px;
     background: linear-gradient(180deg, var(--frame-edge), var(--frame));
@@ -1025,22 +991,17 @@
       <span lang="ru">Концепт-превью · Для клиента</span>
     </span>
     <h1>
-      <span lang="en">The Headline Salon — <span class="accent">a 22-year studio on Ventura Blvd, brought into 2026 without losing what made it loved.</span></span>
-      <span lang="ru">The Headline Salon — <span class="accent">студия с историей 22 года на Ventura Blvd, переосмысленная для 2026 без потери того, за что её любят.</span></span>
+      <span lang="en">La Vie Beauty — <span class="accent">a 20-year salon, brought into 2026 without losing what made it special.</span></span>
+      <span lang="ru">La Vie Beauty — <span class="accent">салон с историей в 20+ лет, переосмысленный для 2026 без потери того, что сделало его узнаваемым.</span></span>
     </h1>
     <p>
-      <span lang="en">A short walkthrough of the redesign for theheadlinesalon.com. We start with what wasn't working on the old site, then go through the new build block by block — what changed, why it matters, and how it converts visits into bookings.</span>
-      <span lang="ru">Короткий разбор редизайна для theheadlinesalon.com. Сначала — что не работало на старом сайте, затем — новый сайт по блокам: что поменялось, зачем, и как это превращает заходы в записи.</span>
+      <span lang="en">A short walkthrough of the redesign. We start with what wasn't working on the old site, then go through the new build block by block — what changed, why it matters, and how it converts visits into bookings.</span>
+      <span lang="ru">Короткий разбор редизайна. Сначала — что не работало на старом сайте, затем — новый сайт по блокам: что поменялось, зачем, и как это превращает заходы в записи.</span>
     </p>
-    <a class="hero-cta" href="index.html?from=guide" target="_blank" rel="noopener">
-      <span lang="en">Open the live preview</span>
-      <span lang="ru">Открыть живое превью</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
   </div>
 </section>
 
-<!-- ============ FINDINGS — WHAT WE FOUND ON THE OLD SITE ============ -->
+<!-- ============ FINDINGS — WHAT WE FOUND ON THE OLD SITE (Scenario B) ============ -->
 <section class="findings">
   <div class="container">
     <div class="section-divider">
@@ -1052,21 +1013,24 @@
       <span class="line"></span>
     </div>
     <p class="section-intro">
-      <span lang="en">Quick honest read of <code>theheadlinesalon.com</code> — so the redesign decisions on the next pages make sense. Nothing here is a criticism of the salon itself; the studio clearly works — 22 years on Ventura Blvd, 4.9 on Google. The site just hasn't kept up.</span>
-      <span lang="ru">Короткий честный разбор <code>theheadlinesalon.com</code> — чтобы решения на следующих экранах были понятны. Это не претензия к салону: студия работает уже 22 года на Ventura Blvd, 4.9 на Google. Сайт просто отстал.</span>
+      <span lang="en">Quick honest read of <code>beautysalonlavie.com</code> — so the redesign decisions on the next pages make sense. Nothing here is a criticism of the salon itself; the salon clearly works. The site just hasn't kept up.</span>
+      <span lang="ru">Короткий честный разбор <code>beautysalonlavie.com</code> — чтобы решения на следующих экранах были понятны. Это не претензия к салону: салон работает. Сайт просто отстал.</span>
     </p>
 
-    <!-- Finding 1 — visual: phone screenshot of broken mobile -->
+    <!-- Finding 1 — visual: team grid with placeholders -->
     <div class="finding-row">
       <div class="device">
-        <div class="iphone">
-          <div class="iphone-side-btn silence"></div>
-          <div class="iphone-side-btn vol-up"></div>
-          <div class="iphone-side-btn vol-down"></div>
-          <div class="iphone-side-btn power"></div>
-          <div class="iphone-notch"></div>
-          <div class="iphone-screen">
-            <img src="findings/old_mobile.png" alt="Old site — broken mobile rendering" loading="lazy" onerror="this.style.display='none'">
+        <div class="finding-macbook">
+          <div class="macbook">
+            <div class="macbook-screen">
+              <span class="macbook-camera"></span>
+              <div class="macbook-bezel">
+                <div class="ann-host">
+                  <img src="screenshots/old_team_desktop.png" alt="Old site — team grid with placeholder images" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <div class="macbook-base"></div>
           </div>
         </div>
       </div>
@@ -1074,95 +1038,59 @@
         <ul class="finding-list">
           <li>
             <span class="bullet-num">1</span>
-            <span lang="en"><strong>Site is not mobile-optimised</strong> — pinch-to-zoom is the only way to read anything. On a phone the page renders at desktop width, text is microscopic, taps go to wrong elements. Beauty traffic happens on phones — most of the audience never gets past this screen.</span>
-            <span lang="ru"><strong>Сайт не адаптирован под телефон</strong> — без жестов pinch-to-zoom прочитать что-либо невозможно. На мобиле страница рендерится в десктоп-ширине, текст микроскопический, тапы попадают мимо. Beauty-трафик идёт с телефонов — большая часть аудитории не доходит дальше первого экрана.</span>
+            <span lang="en"><strong>Two stylists are shown as placeholders</strong> — Mustafa and Alex literally render as "Demo image 363×500". For a salon where trust in the master is the whole sell, this is the most expensive bug on the page.</span>
+            <span lang="ru"><strong>Двое мастеров показаны плейсхолдерами</strong> — у Mustafa и Alex буквально стоит «Demo image 363×500». Для салона, где доверие к мастеру — главное при выборе, это самая дорогая ошибка на странице.</span>
           </li>
           <li>
             <span class="bullet-num">2</span>
-            <span lang="en"><strong>Hero photo is generic stock</strong> — not from the studio, not connected to Lidia or the team. A first-time visitor sees no reason to believe these photos represent what they'll walk into on Ventura Blvd.</span>
-            <span lang="ru"><strong>Hero-фото — обычный сток</strong> — не из студии, не связано с Лидией или командой. Гость, который зашёл впервые, не понимает: эти фото вообще про этот салон или нет.</span>
+            <span lang="en"><strong>The same stylist photo is reused twice</strong> — the team feels half-real.</span>
+            <span lang="ru"><strong>Одно и то же фото мастера используется дважды</strong> — команда выглядит «недонастроенной».</span>
           </li>
           <li>
             <span class="bullet-num">3</span>
-            <span lang="en"><strong>Visual style feels 2012</strong> — narrow center column, centered text everywhere, no visual hierarchy, no spacing. The studio is premium; the website doesn't communicate it.</span>
-            <span lang="ru"><strong>Визуальный стиль из 2012</strong> — узкая центральная колонка, всё по центру, никакой визуальной иерархии, никакого пространства. Студия — премиум; сайт этого не передаёт.</span>
+            <span lang="en"><strong>Hero slider is stock photography</strong> — generic, not connected to the salon, and the visual style feels dated. A first-time visitor sees no reason to believe the photos represent what they'll actually walk into.</span>
+            <span lang="ru"><strong>Слайдер на главной — стоковые фото</strong> — обезличенные, не связанные с салоном, и стилистика уже устарела. Гость, который видит сайт впервые, не понимает: эти фото вообще про этот салон или нет.</span>
           </li>
         </ul>
       </div>
     </div>
 
-    <!-- Findings 4-9 — text cards -->
+    <!-- Findings 2-4 — text cards (no screenshots needed) -->
     <div class="finding-text-grid">
 
       <div class="finding-card">
         <span class="card-num">4</span>
         <h4>
-          <span lang="en">No online booking</span>
-          <span lang="ru">Нет онлайн-записи</span>
+          <span lang="en">No way to book online</span>
+          <span lang="ru">Записаться онлайн нельзя</span>
         </h4>
         <p>
-          <span lang="en">"Please call for an appointment" is the only path. That cuts off the entire Instagram-at-night audience — the people who decide to book at 10pm and want to do it without picking up a phone the next morning.</span>
-          <span lang="ru">«Please call for an appointment» — единственный способ. Это отсекает весь поток из Instagram «после работы»: людей, которые решают записаться в 22:00 и не хотят ждать утра, чтобы позвонить.</span>
+          <span lang="en">Every "Learn More" and "Visit Forum" button leads to <code>#</code>. The only path to a booking is a phone call during business hours — which loses the entire Instagram-at-night audience.</span>
+          <span lang="ru">Все кнопки «Learn More» и «Visit Forum» ведут в <code>#</code>. Единственный способ записаться — звонок в рабочие часы, что отрезает весь поток из Instagram «после работы».</span>
         </p>
       </div>
 
       <div class="finding-card">
         <span class="card-num">5</span>
         <h4>
-          <span lang="en">No services or pricing</span>
-          <span lang="ru">Нет услуг и цен</span>
+          <span lang="en">Mobile experience is broken</span>
+          <span lang="ru">Мобильная версия сломана</span>
         </h4>
         <p>
-          <span lang="en">The site mentions "hair extensions, color, facials, waxing, massages" once in a paragraph and leaves it at that. No prices, no durations, no descriptions. A visitor has no way to know if she can afford this place or how long it'll take — so she leaves.</span>
-          <span lang="ru">Сайт упоминает «hair extensions, color, facials, waxing, massages» одной строкой в абзаце — и всё. Ни цен, ни длительностей, ни описаний. Гость не понимает, потянет ли он этот салон по бюджету или сколько займёт услуга — и уходит.</span>
+          <span lang="en">Most beauty-salon traffic comes from phones — late evening, from Instagram. The current site doesn't render cleanly on a phone, which is exactly the channel where bookings actually happen. Mobile-first should be priority number one for a salon site.</span>
+          <span lang="ru">Большая часть трафика beauty-салонов идёт с телефонов — поздний вечер, из Instagram. Текущий сайт на телефоне отображается криво, а именно мобила — основной канал, через который салон получает записи. Удобство на телефоне здесь должно быть приоритетом номер один.</span>
         </p>
       </div>
 
       <div class="finding-card">
         <span class="card-num">6</span>
         <h4>
-          <span lang="en">No reviews on the site</span>
-          <span lang="ru">На сайте нет отзывов</span>
-        </h4>
-        <p>
-          <span lang="en">The salon has <strong>4.9 stars</strong> on Google and clients writing "I've been going here for 30 years." None of that appears on the website. The single most persuasive asset the salon owns is invisible to first-time visitors.</span>
-          <span lang="ru">У салона <strong>4.9 на Google</strong> и отзывы клиентов в духе «хожу сюда 30 лет». Ничего из этого не показано на сайте. Самый убедительный актив салона невидим для тех, кто заходит впервые.</span>
-        </p>
-      </div>
-
-      <div class="finding-card">
-        <span class="card-num">7</span>
-        <h4>
-          <span lang="en">No before / after gallery</span>
-          <span lang="ru">Нет галереи до / после</span>
-        </h4>
-        <p>
-          <span lang="en">For a salon specializing in extensions, color correction, and curly-hair work, the strongest sales tool is showing the result. The current site has no gallery — visitors can't see what Lidia and the team are capable of.</span>
-          <span lang="ru">Для студии, которая специализируется на наращивании, коррекции цвета и работе с кудрявыми волосами, главный продающий инструмент — показать результат. На текущем сайте галереи нет — гость не видит, на что способны Лидия и команда.</span>
-        </p>
-      </div>
-
-      <div class="finding-card">
-        <span class="card-num">8</span>
-        <h4>
-          <span lang="en">22 years of trust — invisible</span>
-          <span lang="ru">22 года доверия — невидимы</span>
-        </h4>
-        <p>
-          <span lang="en">"Established 2003" is buried in a paragraph. The fact that the studio has served Woodland Hills for over two decades — through clients who've been coming for 15, 20, 30 years — is the strongest signal a beauty business can have, and the site doesn't display it.</span>
-          <span lang="ru">«Established 2003» закопано в абзаце. Факт, что студия обслуживает Woodland Hills больше двух десятилетий — клиенты ходят по 15, 20, 30 лет — самый сильный сигнал доверия для beauty-бизнеса; сайт его не показывает.</span>
-        </p>
-      </div>
-
-      <div class="finding-card">
-        <span class="card-num">9</span>
-        <h4>
           <span lang="en">Small details that signal "not maintained"</span>
-          <span lang="ru">Мелочи, говорящие «сайтом не занимаются»</span>
+          <span lang="ru">Мелочи, говорящие «сайт не обслуживается»</span>
         </h4>
         <p>
-          <span lang="en">Pages list "facials, waxing, massages" — services the studio no longer focuses on. Hours on the site differ from hours on Google. There's no map, no real photos, no Instagram feed. Individually small — together they tell visitors the website hasn't been touched in years, even though the studio clearly has been.</span>
-          <span lang="ru">На страницах перечислены «facials, waxing, massages» — услуги, на которых студия уже не фокусируется. Часы на сайте отличаются от часов в Google. Нет карты, нет реальных фото, нет ленты Instagram. По отдельности — мелочи; вместе они говорят: сайтом давно никто не занимается, хотя студия работает как часы.</span>
+          <span lang="en">Footer still says <code>© 2018</code>. The login modal exposes a leftover developer instruction to visitors. Buttons like <strong>Visit Forum</strong> link nowhere. Individually small — together they tell visitors the website hasn't been touched in years, even though the salon clearly has been.</span>
+          <span lang="ru">Футер показывает <code>© 2018</code>. В окне логина гостю видна забытая инструкция для разработчика. Кнопки вроде <strong>Visit Forum</strong> ведут в никуда. По отдельности — ерунда; вместе — гость думает, что сайтом давно никто не занимается, даже если сам салон работает как часы.</span>
         </p>
       </div>
 
@@ -1187,18 +1115,17 @@
       <span lang="ru">Восемь блоков по новому сайту — что на экране, зачем оно там, и что именно тянет на себе. Где мобильная версия отличается от десктопа — отмечено.</span>
     </p>
 
-    <!-- 01 — Polaroid hero stack with swipe -->
+    <!-- 01 — Hero with parallax & EST 2003 badge -->
     <div class="feature-row">
       <div class="device">
-        <div class="iphone">
-          <div class="iphone-side-btn silence"></div>
-          <div class="iphone-side-btn vol-up"></div>
-          <div class="iphone-side-btn vol-down"></div>
-          <div class="iphone-side-btn power"></div>
-          <div class="iphone-notch"></div>
-          <div class="iphone-screen">
-            <img src="screenshots/hero_mobile.png" alt="Hero with polaroid stack on mobile" loading="lazy" onerror="this.style.display='none'">
+        <div class="macbook">
+          <div class="macbook-screen">
+            <span class="macbook-camera"></span>
+            <div class="macbook-bezel">
+              <img src="screenshots/hero_desktop.png" alt="Hero with parallax visual and EST 2003 badge" loading="lazy">
+            </div>
           </div>
+          <div class="macbook-base"></div>
         </div>
       </div>
       <div class="copy">
@@ -1207,32 +1134,33 @@
           <span class="badge both"><span lang="en">Both versions</span><span lang="ru">Обе версии</span></span>
         </div>
         <h3 class="feature-title">
-          <span lang="en">Editorial hero with a 22-year stamp</span>
-          <span lang="ru">Редакционный hero с печатью «22 года»</span>
+          <span lang="en">Editorial hero with a 20-year stamp</span>
+          <span lang="ru">Редакционный hero с печатью «20 лет»</span>
         </h3>
         <p class="feature-text">
-          <span lang="en">Big serif headline — <em>"Beautiful hair, crafted daily"</em> — paired with a stack of polaroid photos that the visitor can swipe through with finger rotation. Floating cards beside it surface the most persuasive numbers: <strong>4.9 ★ Google rating</strong> and <strong>4 500+ heads of hair styled</strong>. The story is told on the first screen.</span>
-          <span lang="ru">Крупный serif-заголовок — <em>«Beautiful hair, crafted daily»</em> — рядом стопка полароидных фото, которые гость может листать пальцем с поворотом карточки. Плавающие плашки рядом подсвечивают самые убедительные цифры: <strong>4.9 ★ на Google</strong> и <strong>4 500+ обслуженных клиентов</strong>. Вся история — на первом экране.</span>
+          <span lang="en">Big serif headline — <em>"We create beauty &amp; success"</em> — paired with a parallax image of the salon and a slowly-rotating "EST. 2003 · LA VIE · BROOKLYN · BEAUTY · SALON" badge. Three social-proof tiles below: <strong>20+ years on Brighton</strong>, <strong>4.9 Google rating</strong>, <strong>40+ services</strong>. The story is told in the first screen.</span>
+          <span lang="ru">Крупный serif-заголовок — <em>«We create beauty &amp; success»</em> — рядом параллакс-фото салона и медленно вращающаяся печать «EST. 2003 · LA VIE · BROOKLYN · BEAUTY · SALON». Под этим — три плитки социального доказательства: <strong>20+ лет на Брайтоне</strong>, <strong>4.9 на Google</strong>, <strong>40+ услуг</strong>. Вся история — на первом экране.</span>
         </p>
         <ul class="feature-bullets">
-          <li><span lang="en"><strong>Polaroid stack with swipe</strong> — finger-rotation, auto-rotate every 5s, beats a static slider on engagement</span><span lang="ru"><strong>Полароидная стопка со свайпом</strong> — пальцем с поворотом, авто-смена каждые 5с — заметно живее статичного слайдера</span></li>
-          <li><span lang="en"><strong>Trust badges row</strong> — "22 years of craft · 4.9 on Google · Brazilian Blowout certified · Vegan color"</span><span lang="ru"><strong>Полоса с акцентами доверия</strong> — «22 года ремесла · 4.9 на Google · Brazilian Blowout · веган-краска»</span></li>
-          <li><span lang="en">Two CTAs — <strong>Book a chair</strong> (primary) and <strong>Services</strong> (secondary)</span><span lang="ru">Две CTA — <strong>Book a chair</strong> (основная) и <strong>Services</strong> (вторичная)</span></li>
+          <li><span lang="en"><strong>Parallax photo</strong> shifts on scroll — depth, no extra weight</span><span lang="ru"><strong>Параллакс-фото</strong> смещается при скролле — глубина без перегруза</span></li>
+          <li><span lang="en"><strong>Spinning EST 2003 badge</strong> — visible authority marker, not a logo dump</span><span lang="ru"><strong>Вращающаяся печать EST 2003</strong> — заметный знак опыта, а не логотип-нашлёпка</span></li>
+          <li><span lang="en">Two CTAs — <strong>Request a Booking</strong> (primary) and <strong>Explore Services</strong> (secondary)</span><span lang="ru">Две CTA — <strong>Request a Booking</strong> (основная) и <strong>Explore Services</strong> (вторичная)</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- 02 — Light/Dark theme -->
+    <!-- 02 — Light/Dark theme (day/evening) -->
     <div class="feature-row reversed">
       <div class="device">
-        <div class="macbook">
-          <div class="macbook-screen">
-            <span class="macbook-camera"></span>
-            <div class="macbook-bezel">
-              <img src="screenshots/theme_desktop.png" alt="Light/dark theme switch on desktop" loading="lazy" onerror="this.style.display='none'">
-            </div>
+        <div class="iphone">
+          <div class="iphone-side-btn silence"></div>
+          <div class="iphone-side-btn vol-up"></div>
+          <div class="iphone-side-btn vol-down"></div>
+          <div class="iphone-side-btn power"></div>
+          <div class="iphone-notch"></div>
+          <div class="iphone-screen">
+            <img src="screenshots/theme_mobile.png" alt="Light/dark theme switch on mobile" loading="lazy">
           </div>
-          <div class="macbook-base"></div>
         </div>
       </div>
       <div class="copy">
@@ -1245,25 +1173,25 @@
           <span lang="ru">День и вечер — в одно касание</span>
         </h3>
         <p class="feature-text">
-          <span lang="en">A small toggle in the navigation switches the whole site between a warm cream daytime palette and a deep teal night palette. Most beauty traffic comes after work, in dim light — a dark mode isn't decoration, it's where guests actually browse on the couch at 10pm.</span>
-          <span lang="ru">Маленький переключатель в навигации меняет всю страницу между тёплой кремовой палитрой и глубокой тёмно-аквамариновой ночной. Большая часть трафика beauty-салонов — это вечер после работы, в полумраке. Тёмная тема тут — не украшение, а среда, в которой реально листают на диване в 22:00.</span>
+          <span lang="en">A floating leaf-shaped toggle in the corner switches the whole site between a warm bone-toned daytime palette and a deep botanical-green night palette. Most beauty traffic comes after work, in dim light — a dark mode isn't decoration, it's where guests actually browse.</span>
+          <span lang="ru">Маленький переключатель в углу меняет всю страницу между тёплой светлой палитрой («warm bone») и глубокой ночной зелёной. Большая часть трафика beauty-салонов — это вечер после работы, в полумраке. Тёмная тема тут — не украшение, а среда, в которой реально листают.</span>
         </p>
         <ul class="feature-bullets">
-          <li><span lang="en"><strong>Map syncs</strong> with the theme — Google Maps inverts to dark when the site does</span><span lang="ru"><strong>Карта синхронизируется</strong> с темой — Google Maps инвертируется на тёмную, когда сайт переходит в тёмную</span></li>
-          <li><span lang="en">All text, photos, badges retain warmth in both modes — no harsh inversion</span><span lang="ru">Текст, фото, бейджи сохраняют теплоту в обеих темах — без жёсткой инверсии</span></li>
+          <li><span lang="en"><strong>Map syncs</strong> with the theme — light or dark Google Maps tiles, automatically</span><span lang="ru"><strong>Карта синхронизирована</strong> с темой — светлая или тёмная Google Maps подгружается сама</span></li>
+          <li><span lang="en">Photos retain warmth in both modes — no harsh inversion</span><span lang="ru">Фото сохраняют теплоту в обеих темах — без жёсткой инверсии</span></li>
           <li><span lang="en">Choice is remembered between visits</span><span lang="ru">Выбор запоминается между визитами</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- 03 — Stats infographic -->
+    <!-- 03 — Custom leaf cursor (desktop only) -->
     <div class="feature-row">
       <div class="device">
         <div class="macbook">
           <div class="macbook-screen">
             <span class="macbook-camera"></span>
             <div class="macbook-bezel">
-              <img src="screenshots/stats_desktop.png" alt="Stats infographic with key business numbers" loading="lazy" onerror="this.style.display='none'">
+              <img src="screenshots/cursor_desktop.png" alt="Custom leaf cursor on desktop" loading="lazy">
             </div>
           </div>
           <div class="macbook-base"></div>
@@ -1272,36 +1200,35 @@
       <div class="copy">
         <div class="feature-num">
           <span>03 / 08</span>
-          <span class="badge both"><span lang="en">Both versions</span><span lang="ru">Обе версии</span></span>
+          <span class="badge desktop"><span lang="en">Desktop only</span><span lang="ru">Только десктоп</span></span>
         </div>
         <h3 class="feature-title">
-          <span lang="en">The numbers, front and centre</span>
-          <span lang="ru">Цифры — на видном месте</span>
+          <span lang="en">Floating leaf cursor &amp; magnetic CTAs</span>
+          <span lang="ru">Курсор-лист и магнитные CTA</span>
         </h3>
         <p class="feature-text">
-          <span lang="en">Four big numbers across one editorial line — <strong>22 years</strong>, <strong>4 500+ clients</strong>, <strong>98% return rate</strong>, <strong>4.9 ★ on Google</strong>. Each animates from zero on first scroll. The strongest social-proof signals a beauty studio owns — visible in the first viewport, not buried in an "About" page nobody reads.</span>
-          <span lang="ru">Четыре крупные цифры в одну редакционную линию — <strong>22 года</strong>, <strong>4 500+ клиентов</strong>, <strong>98% возвращаемость</strong>, <strong>4.9 ★ на Google</strong>. Каждое число анимируется с нуля при первой прокрутке. Самые сильные сигналы доверия для beauty-студии видны в первом экране, а не закопаны во вкладке «About», куда никто не доходит.</span>
+          <span lang="en">On desktop the cursor becomes a small soft-green leaf that follows the pointer. Tactile, on-brand, and noticed within seconds. CTAs are <strong>magnetic</strong> — the leaf and button gently pull toward each other on hover, so clicks land intentionally. The screenshot shows the deep-green CTA strip near the bottom of the page, where the magnetic effect reads strongest.</span>
+          <span lang="ru">На десктопе курсор превращается в мягко-зелёный лист, который следует за мышью. Тактильно, в стиле бренда, замечается в первые секунды. CTA-кнопки <strong>магнитные</strong> — лист и кнопка слегка притягиваются друг к другу при наведении, клики попадают осознанно. На скриншоте — deep-green CTA-стрип внизу страницы, где магнитный эффект читается лучше всего.</span>
         </p>
         <ul class="feature-bullets">
-          <li><span lang="en"><strong>Count-up animation</strong> on scroll — the numbers earn attention, not demand it</span><span lang="ru"><strong>Анимация count-up</strong> при скролле — цифры привлекают внимание, а не требуют его</span></li>
-          <li><span lang="en">Aqua icons + golden stars for the rating — visual hierarchy without clutter</span><span lang="ru">Аква-иконки и золотые звёзды у рейтинга — визуальная иерархия без перегруза</span></li>
-          <li><span lang="en">Editorial dividers between cells — looks like a magazine, not a dashboard</span><span lang="ru">Редакционные разделители между ячейками — журнальный вид, не дашборд</span></li>
+          <li><span lang="en"><strong>Pure SVG</strong> — sharp on retina, no image asset</span><span lang="ru"><strong>Чистый SVG</strong> — чёткий на retina, без файла-картинки</span></li>
+          <li><span lang="en">Auto-disabled on touch devices — phones already have native feedback</span><span lang="ru">Авто-отключается на тач-устройствах — там работает нативный отклик</span></li>
+          <li><span lang="en">Performance-light — uses <code>transform</code>, never <code>top/left</code></span><span lang="ru">Лёгкий по перформансу — использует <code>transform</code>, не <code>top/left</code></span></li>
         </ul>
       </div>
     </div>
 
-    <!-- 04 — Services accordion with photos & prices -->
+    <!-- 04 — Services grid -->
     <div class="feature-row reversed">
       <div class="device">
-        <div class="iphone">
-          <div class="iphone-side-btn silence"></div>
-          <div class="iphone-side-btn vol-up"></div>
-          <div class="iphone-side-btn vol-down"></div>
-          <div class="iphone-side-btn power"></div>
-          <div class="iphone-notch"></div>
-          <div class="iphone-screen">
-            <img src="screenshots/services_mobile.png" alt="Services accordion on mobile" loading="lazy" onerror="this.style.display='none'">
+        <div class="macbook">
+          <div class="macbook-screen">
+            <span class="macbook-camera"></span>
+            <div class="macbook-bezel">
+              <img src="screenshots/services_desktop.png" alt="Services grid on desktop" loading="lazy">
+            </div>
           </div>
+          <div class="macbook-base"></div>
         </div>
       </div>
       <div class="copy">
@@ -1310,90 +1237,22 @@
           <span class="badge both"><span lang="en">Both versions</span><span lang="ru">Обе версии</span></span>
         </div>
         <h3 class="feature-title">
-          <span lang="en">Services that actually sell — with prices and photos</span>
-          <span lang="ru">Услуги, которые реально продают — с ценами и фото</span>
+          <span lang="en">Eight services, one editorial grid</span>
+          <span lang="ru">Восемь услуг, одна редакционная сетка</span>
         </h3>
         <p class="feature-text">
-          <span lang="en">Six core services in a clean accordion — <strong>Hair Extensions · Color &amp; Correction · Brazilian Blowout · Up-do's &amp; Bridal · Cut &amp; Style · Olaplex Treatment</strong>. Each row shows the price as a premium pill, and tapping reveals a real photo, a description, the time it takes, how long it lasts, and a "Book this service" CTA. The old site had none of this; the new one removes every excuse to leave.</span>
-          <span lang="ru">Шесть ключевых услуг в аккуратном аккордеоне — <strong>Hair Extensions · Color &amp; Correction · Brazilian Blowout · Up-do's &amp; Bridal · Cut &amp; Style · Olaplex Treatment</strong>. У каждой услуги цена в виде премиум-капсулы; по тапу — фото, описание, время выполнения, сколько держится результат, и кнопка «Book this service». На старом сайте этого не было — новый закрывает все «уйду подумаю».</span>
+          <span lang="en">Hair · Skin · Nails · Makeup · Removal · Tan · Body · Bridal — each in its own card with a real photo, hover-lift, and a one-line story. Where the old site listed services as plain text links, the new grid <strong>sells</strong> each one in a glance. Every card is a tap away from booking.</span>
+          <span lang="ru">Hair · Skin · Nails · Makeup · Removal · Tan · Body · Bridal — каждая услуга на своей карточке с реальным фото, hover-эффектом и одной-двумя фразами. Старый сайт показывал услуги как ссылки текстом — новая сетка <strong>продаёт</strong> их с первого взгляда. Каждая карточка ведёт прямо в букинг.</span>
         </p>
         <ul class="feature-bullets">
-          <li><span lang="en"><strong>Premium price pill</strong> — bold aqua price, tasteful "From" prefix, becomes ink-tinted when the row opens</span><span lang="ru"><strong>Премиум-капсула с ценой</strong> — крупная аква-цена, изящное «From», при раскрытии становится тёмной с белым текстом</span></li>
-          <li><span lang="en"><strong>4 : 5 photo, time, duration, tags, CTA</strong> — everything a guest needs to decide, in one tap</span><span lang="ru"><strong>Фото 4 : 5, время, длительность, теги, CTA</strong> — всё, что нужно гостю для решения, в один тап</span></li>
-          <li><span lang="en">"Book this service" pre-fills the booking form below — zero friction</span><span lang="ru">«Book this service» предзаполняет форму записи ниже — ноль трения</span></li>
+          <li><span lang="en"><strong>Stagger reveal on scroll</strong> — eye is led naturally down the page</span><span lang="ru"><strong>Stagger-анимация при скролле</strong> — взгляд естественно ведётся вниз по странице</span></li>
+          <li><span lang="en">Italic word-accents (<em>Couture</em>, <em>Rituals</em>, <em>Studio</em>) — editorial, not corporate</span><span lang="ru">Курсивные акценты (<em>Couture</em>, <em>Rituals</em>, <em>Studio</em>) — редакционно, а не корпоративно</span></li>
+          <li><span lang="en">Each card opens the booking form pre-filled with that service</span><span lang="ru">Каждая карточка открывает форму записи с уже выбранной услугой</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- 05 — Before/After carousel -->
-    <div class="feature-row">
-      <div class="device">
-        <div class="macbook">
-          <div class="macbook-screen">
-            <span class="macbook-camera"></span>
-            <div class="macbook-bezel">
-              <img src="screenshots/beforeafter_desktop.png" alt="Before / after slider on desktop" loading="lazy" onerror="this.style.display='none'">
-            </div>
-          </div>
-          <div class="macbook-base"></div>
-        </div>
-      </div>
-      <div class="copy">
-        <div class="feature-num">
-          <span>05 / 08</span>
-          <span class="badge both"><span lang="en">Both versions · Key feature</span><span lang="ru">Обе версии · Ключевая фича</span></span>
-        </div>
-        <h3 class="feature-title">
-          <span lang="en">Before / after — the strongest sell a salon has</span>
-          <span lang="ru">Before / after — самый сильный аргумент салона</span>
-        </h3>
-        <p class="feature-text">
-          <span lang="en">A draggable slider that splits before and after on the same photo, plus a slideshow of <strong>multiple client transformations</strong> with thumbnails and arrows. For a studio that does extensions and color corrections, this is the single most persuasive section on the page — guests see what Lidia and the team can actually do, not just hear about it.</span>
-          <span lang="ru">Драггабельный слайдер «before/after» на одной фотографии + слайд-шоу из <strong>нескольких клиентских трансформаций</strong> с миниатюрами и стрелками. Для студии, которая делает наращивание и коррекцию цвета, это самый убедительный блок на странице — гость видит, на что способны Лидия и команда, а не просто читает об этом.</span>
-        </p>
-        <ul class="feature-bullets">
-          <li><span lang="en"><strong>Drag the handle</strong> on desktop or touch on mobile — same interaction, both devices</span><span lang="ru"><strong>Перетаскиваемый ползунок</strong> на десктопе и тач на мобиле — одна механика, оба устройства</span></li>
-          <li><span lang="en"><strong>Multiple before/after pairs</strong> — thumbnails below, arrows beside, counter "1 / 4"</span><span lang="ru"><strong>Несколько пар before/after</strong> — миниатюры под слайдом, стрелки рядом, счётчик «1 / 4»</span></li>
-          <li><span lang="en">First-view auto-demo — the slider gently slides itself once on entry, so the interaction is discovered, not learned</span><span lang="ru">Авто-демо при первом появлении в кадре — слайдер сам слегка двигается, чтобы гость увидел, как им пользоваться</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 06 — Reviews with Google logos & gold stars -->
-    <div class="feature-row reversed">
-      <div class="device">
-        <div class="macbook">
-          <div class="macbook-screen">
-            <span class="macbook-camera"></span>
-            <div class="macbook-bezel">
-              <img src="screenshots/reviews_desktop.png" alt="Reviews carousel with Google logos" loading="lazy" onerror="this.style.display='none'">
-            </div>
-          </div>
-          <div class="macbook-base"></div>
-        </div>
-      </div>
-      <div class="copy">
-        <div class="feature-num">
-          <span>06 / 08</span>
-          <span class="badge both"><span lang="en">Both versions</span><span lang="ru">Обе версии</span></span>
-        </div>
-        <h3 class="feature-title">
-          <span lang="en">Real Google reviews — finally on the site</span>
-          <span lang="ru">Настоящие Google-отзывы — наконец-то на сайте</span>
-        </h3>
-        <p class="feature-text">
-          <span lang="en">A carousel of client reviews with golden stars, the actual Google logo on each card, client initials, and the date. The "4.9 / 240+ reviews" badge sits prominently above. We can pull live Google reviews onto the page, or run a curated wall the studio controls — both options on the pricing page. The reviews are already there on Google; the website finally shows them.</span>
-          <span lang="ru">Карусель отзывов клиентов: золотые звёзды, настоящий Google-логотип на каждой карточке, инициалы клиента, дата. Бейдж «4.9 / 240+ отзывов» — заметно сверху. На прайс-странице есть два варианта: подтягивать живые Google-отзывы прямо на страницу или вести курируемую стену под контролем студии. Отзывы у студии уже есть — сайт их наконец показывает.</span>
-        </p>
-        <ul class="feature-bullets">
-          <li><span lang="en"><strong>Golden stars with subtle glow</strong> — premium, not fluorescent</span><span lang="ru"><strong>Золотые звёзды с лёгким свечением</strong> — премиум, без «детского» неона</span></li>
-          <li><span lang="en">Mobile shows <strong>three reviews per page</strong> with pagination — feels real, not promotional</span><span lang="ru">На мобиле показывается <strong>3 отзыва на страницу</strong> с пагинацией — чувствуется как настоящие отзывы, а не реклама</span></li>
-          <li><span lang="en">Real Google logo SVG + Yelp marker — clear source attribution per review</span><span lang="ru">Настоящий SVG-логотип Google + маркер Yelp — у каждого отзыва видно, откуда он</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 07 — Booking with country code & upsell -->
+    <!-- 05 — Pricing with tabs (mobile difference) -->
     <div class="feature-row">
       <div class="device">
         <div class="iphone">
@@ -1403,13 +1262,49 @@
           <div class="iphone-side-btn power"></div>
           <div class="iphone-notch"></div>
           <div class="iphone-screen">
-            <img src="screenshots/booking_mobile.png" alt="Booking form with upsell on mobile" loading="lazy" onerror="this.style.display='none'">
+            <img src="screenshots/pricing_mobile.png" alt="Pricing tabs on mobile" loading="lazy">
           </div>
         </div>
       </div>
       <div class="copy">
         <div class="feature-num">
-          <span>07 / 08</span>
+          <span>05 / 08</span>
+          <span class="badge mobile"><span lang="en">Mobile difference</span><span lang="ru">Отличие на мобиле</span></span>
+        </div>
+        <h3 class="feature-title">
+          <span lang="en">Honest pricing, comfortable on a phone</span>
+          <span lang="ru">Честные цены, удобные на телефоне</span>
+        </h3>
+        <p class="feature-text">
+          <span lang="en">Four tabs — <strong>Hair · Color · Skin &amp; Nails · Bridal</strong> — each with its own clear price list. Length-dependent rows are prefixed <em>"from"</em> to remove sticker-shock anxiety, and seasonal offers show <strong>old price → new price → −%</strong> in a tasteful leaf-tinted badge. On mobile the tabs scroll horizontally and rows reflow into two lines so the price always reads cleanly on the right.</span>
+          <span lang="ru">Четыре таба — <strong>Hair · Color · Skin &amp; Nails · Bridal</strong> — каждый со своим прайсом. Услуги, где цена зависит от длины, помечены <em>«from»</em> — чтобы не было «ценового шока» в первую секунду. У сезонных предложений показывается <strong>старая цена → новая цена → −%</strong> в аккуратном leaf-бейдже. На мобиле табы скроллятся горизонтально, а строка прайса переносится в две строки, чтобы цена справа всегда читалась чётко.</span>
+        </p>
+        <ul class="feature-bullets">
+          <li><span lang="en"><strong>"from"</strong> wording removes price-anchoring panic</span><span lang="ru"><strong>«from»</strong> снимает «прайс-якорь» в голове у гостя</span></li>
+          <li><span lang="en"><strong>Old / new / −%</strong> badges</strong> — manageable from the admin panel; mark a price as "previous" and the discount calculates automatically</span><span lang="ru"><strong>Бейджи старая / новая / −%</strong> — управляются из админки: поставили «предыдущую» цену → процент посчитается сам</span></li>
+          <li><span lang="en">Subtitle under each row clarifies what's included (e.g. "consultation, cut, blow-dry finish")</span><span lang="ru">Подпись под каждой строкой уточняет, что входит</span></li>
+          <li><span lang="en">"Book a Free Consultation" CTA right next to the prices — friction-free path to the booking</span><span lang="ru">CTA «Book a Free Consultation» прямо рядом с ценами — путь к записи без трения</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 06 — 3-step booking with upsell ("Pair It With") -->
+    <div class="feature-row reversed">
+      <div class="device">
+        <div class="iphone">
+          <div class="iphone-side-btn silence"></div>
+          <div class="iphone-side-btn vol-up"></div>
+          <div class="iphone-side-btn vol-down"></div>
+          <div class="iphone-side-btn power"></div>
+          <div class="iphone-notch"></div>
+          <div class="iphone-screen">
+            <img src="screenshots/booking_mobile.png" alt="3-step booking form on mobile" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="copy">
+        <div class="feature-num">
+          <span>06 / 08</span>
           <span class="badge both"><span lang="en">Both versions · Key feature</span><span lang="ru">Обе версии · Ключевая фича</span></span>
         </div>
         <h3 class="feature-title">
@@ -1417,25 +1312,60 @@
           <span lang="ru">Настоящая форма записи — со встроенным upsell</span>
         </h3>
         <p class="feature-text">
-          <span lang="en">Two visual steps: <strong>1. pick a service · 2. your details</strong>. Step one is a 2 × 4 tile grid with icons, prices, and durations. After a service is selected, a <strong>complementary "Bundle &amp; save" card</strong> appears — pick Color, get Olaplex Treatment for $45 instead of $75. Step two has a country-code phone selector with proper masking and email validation. After submit, a clean confirmation screen with hours and a tappable phone number.</span>
-          <span lang="ru">Два визуальных шага: <strong>1. выбор услуги · 2. контакты</strong>. Шаг один — сетка плиток 2 × 4 с иконками, ценами и длительностями. После выбора услуги появляется <strong>карточка допродажи «Bundle &amp; save»</strong> — выбрал Color, получил Olaplex Treatment за $45 вместо $75. На шаге два — селектор кода страны с правильной маской номера и валидацией email. После отправки — чистый экран подтверждения с часами работы и тапабельным телефоном.</span>
+          <span lang="en">Three steps: <strong>1. pick a service · 2. pair it with · 3. your details</strong>. The middle step is the quiet money-maker — when a guest taps "Color &amp; Highlights", we suggest a complementary "Spa Manicure while your color processes". Soft, never pushy, but it lifts average ticket size meaningfully across hundreds of bookings.</span>
+          <span lang="ru">Три шага: <strong>1. выбор услуги · 2. дополнительная услуга · 3. контакты</strong>. Средний шаг — тихий драйвер выручки: гость выбирает «Color &amp; Highlights», и мы мягко предлагаем «Spa Manicure, пока цвет проявляется». Без давления — но средний чек на сотнях записей растёт ощутимо.</span>
         </p>
         <ul class="feature-bullets">
-          <li><span lang="en"><strong>"Bundle &amp; save" upsell</strong> — the quiet money-maker; soft, never pushy, lifts average ticket meaningfully across hundreds of bookings</span><span lang="ru"><strong>Допродажа «Bundle &amp; save»</strong> — тихий драйвер выручки; без давления, средний чек на сотнях записей растёт ощутимо</span></li>
-          <li><span lang="en"><strong>Country-code selector</strong> with 24 countries + automatic phone formatting per country</span><span lang="ru"><strong>Селектор кода страны</strong> с 24 странами и автоматической маской номера под каждую</span></li>
+          <li><span lang="en"><strong>Service chips</strong> with icons — visual, not a dropdown</span><span lang="ru"><strong>Чипы услуг</strong> с иконками — визуально, а не выпадающий список</span></li>
+          <li><span lang="en"><strong>"Pair it with"</strong> step is conditional — different upsell for color vs cut vs bridal</span><span lang="ru"><strong>Шаг «Pair it with»</strong> условный — разная допродажа для color, cut, bridal</span></li>
+          <li><span lang="en">Step indicator at the top — guest always knows where they are</span><span lang="ru">Индикатор шагов сверху — гость всегда видит, где он</span></li>
           <li><span lang="en">Submissions go to email + (optionally) Telegram or WhatsApp — see pricing</span><span lang="ru">Заявки приходят на email + (опционально) в Telegram или WhatsApp — см. прайс</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- 08 — Theme-aware map + contact -->
+    <!-- 07 — Booking confirmation state -->
+    <div class="feature-row">
+      <div class="device">
+        <div class="macbook">
+          <div class="macbook-screen">
+            <span class="macbook-camera"></span>
+            <div class="macbook-bezel">
+              <img src="screenshots/booking_success_desktop.png" alt="Booking success state with hours" loading="lazy">
+            </div>
+          </div>
+          <div class="macbook-base"></div>
+        </div>
+      </div>
+      <div class="copy">
+        <div class="feature-num">
+          <span>07 / 08</span>
+          <span class="badge both"><span lang="en">Both versions</span><span lang="ru">Обе версии</span></span>
+        </div>
+        <h3 class="feature-title">
+          <span lang="en">Confirmation that closes the loop</span>
+          <span lang="ru">Подтверждение, которое закрывает цикл</span>
+        </h3>
+        <p class="feature-text">
+          <span lang="en">After submit, the guest sees a clear screen: <strong>"Your request is in. The team will call to confirm within the hour during business hours."</strong> Right below — the actual hours (Mon–Sat 8:00–20:00) and a tappable phone link. No mystery, no "did it send?" anxiety. The most common moment people abandon a booking is uncertainty after pressing submit — this kills it.</span>
+          <span lang="ru">После отправки гость видит ясный экран: <strong>«Ваш запрос принят. Команда перезвонит для подтверждения в течение часа в рабочее время».</strong> Прямо под ним — настоящие часы работы (Mon–Sat 8:00–20:00) и тапабельный номер телефона. Никаких загадок и «дошло ли?». Чаще всего люди бросают букинг именно в момент неопределённости после кнопки — этот экран её закрывает.</span>
+        </p>
+        <ul class="feature-bullets">
+          <li><span lang="en"><strong>Real working hours</strong> displayed — guest knows exactly when to expect the callback</span><span lang="ru"><strong>Реальные часы работы</strong> на экране — гость знает, когда ждать звонок</span></li>
+          <li><span lang="en">Phone number is a <code>tel:</code> link — one tap dials</span><span lang="ru">Номер телефона — это <code>tel:</code> ссылка, тап и набор</span></li>
+          <li><span lang="en">"Send Another Request" button for repeat bookings (e.g. mom + daughter)</span><span lang="ru">Кнопка «Send Another Request» для повторных записей (например, мама + дочь)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 08 — Brighton Beach map + contact -->
     <div class="feature-row reversed">
       <div class="device">
         <div class="macbook">
           <div class="macbook-screen">
             <span class="macbook-camera"></span>
             <div class="macbook-bezel">
-              <img src="screenshots/map_desktop.png" alt="Theme-aware Google Map on Ventura Blvd" loading="lazy" onerror="this.style.display='none'">
+              <img src="screenshots/contact_desktop.png" alt="Brighton Beach map on desktop" loading="lazy">
             </div>
           </div>
           <div class="macbook-base"></div>
@@ -1447,17 +1377,17 @@
           <span class="badge both"><span lang="en">Both versions</span><span lang="ru">Обе версии</span></span>
         </div>
         <h3 class="feature-title">
-          <span lang="en">Find us on Ventura Blvd — clearly</span>
-          <span lang="ru">Найти нас на Ventura Blvd — чётко</span>
+          <span lang="en">Find us on Brighton — clearly</span>
+          <span lang="ru">Найти нас на Брайтоне — чётко</span>
         </h3>
         <p class="feature-text">
-          <span lang="en">Embedded Google Map (22705 Ventura Blvd, Woodland Hills) that <strong>switches to dark when the site is in night mode</strong>. Address, phone, hours, social icons — Instagram, Facebook, TikTok — all in tap-zone reach. "Get directions" is one tap and opens Maps natively. The old site had nothing of this; the new one makes it impossible to get lost.</span>
-          <span lang="ru">Встроенная Google-карта (22705 Ventura Blvd, Woodland Hills) которая <strong>переключается на тёмную тему вместе с сайтом</strong>. Адрес, телефон, часы работы, соцсети — Instagram, Facebook, TikTok — все в зоне большого пальца. «Get directions» — один тап и нативное открытие Maps. На старом сайте этого не было — на новом потеряться невозможно.</span>
+          <span lang="en">Embedded Google Map (1087 Brighton Beach Ave, between 12th and 13th) that <strong>switches to dark when the site is in night mode</strong>. Address, phone, email, and four social icons — Instagram, Facebook, TikTok, Pinterest — all in tap-zone reach. The "no checks, gratuities in cash only" policy is shown openly so there's no awkward conversation at the chair.</span>
+          <span lang="ru">Встроенная Google-карта (1087 Brighton Beach Ave, между 12 и 13) которая <strong>переключается на тёмную тему вместе с сайтом</strong>. Адрес, телефон, email и четыре соцсети — Instagram, Facebook, TikTok, Pinterest — в зоне большого пальца. Политика «не принимаем чеки, чаевые только наличными» показана открыто — чтобы не было неловкого разговора у кресла.</span>
         </p>
         <ul class="feature-bullets">
-          <li><span lang="en"><strong>Map theme</strong> follows the site theme — daylight or night, same trip</span><span lang="ru"><strong>Тема карты</strong> следует за темой сайта — день или вечер, та же поездка</span></li>
-          <li><span lang="en">FAQ block answers the questions guests actually ask before booking — first-time visit, parking, cancellation, consultation</span><span lang="ru">FAQ отвечает на реальные вопросы гостей перед записью — первый визит, парковка, отмена, консультация</span></li>
-          <li><span lang="en">Address, phone, email — all <code>tel:</code> / <code>mailto:</code> / Maps-ready links</span><span lang="ru">Адрес, телефон, email — все как <code>tel:</code> / <code>mailto:</code> / готовы для Maps</span></li>
+          <li><span lang="en"><strong>Map theme</strong> follows the site theme — daylight or night</span><span lang="ru"><strong>Тема карты</strong> следует за темой сайта — день или ночь</span></li>
+          <li><span lang="en">Hours block highlights "Sunday — Free Day" instead of "Closed" — small warmth detail</span><span lang="ru">Блок часов пишет «Sunday — Free Day» вместо «Closed» — маленький тёплый штрих</span></li>
+          <li><span lang="en">Address, phone, email all <code>tel:</code> / <code>mailto:</code> / Maps-ready</span><span lang="ru">Адрес, телефон, email — все как <code>tel:</code> / <code>mailto:</code> / готовы к открытию в Maps</span></li>
         </ul>
       </div>
     </div>
